@@ -17,6 +17,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 
 var app = builder.Build();
+app.UseMiddleware<IpRestrictionMiddleware>();
 
 // Use CORS policy
 app.UseCors("AllowSpecificOrigin");
