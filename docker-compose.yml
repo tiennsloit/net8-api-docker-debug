@@ -1,0 +1,15 @@
+version: "3.7" 
+services:
+  mynet8:
+    container_name: mynet8
+    image: tiennsloit/net8:1
+    build:
+      context: .    
+      target: debug
+    volumes:
+      - ./:/work/
+    ports:
+      - 5001:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
